@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">PruebaCriptomoneda</string>
+    <string name="ingrese_su_nombre">Ingrese su Nombre</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="hola">Hola</string>
+    <string name="nombre_usuario">nombre usuario</string>
+    <string name="abc">abc</string>
+    <string name="usd">USD$</string>
+    <string name="valor">valor</string>
+    <string name="nombre">nombre</string>
+    <string name="ranking">Ranking:</string>
+    <string name="suministro">Suministro:</string>
+    <string name="suministro_maximo">Suministro máximo:</string>
+    <string name="capital_de_mercado">Capital de Mercado $</string>
+    <string name="volumen_24h">Volumen(24H)$</string>
+    <string name="cambio_24h">Cambio(24H)</string>
+    <string name="vwap">VWAP</string>
+    <string name="vwap_24h">VWAP(24H)$</string>
+    <string name="msg_error">Debe ingresar un nombre</string>
 </resources>
