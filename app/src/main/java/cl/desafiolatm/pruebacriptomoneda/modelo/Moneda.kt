@@ -1,31 +1,40 @@
 package cl.desafiolatm.pruebacriptomoneda.modelo
 
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "moneda_table")
 data class Moneda(
     @SerializedName("changePercent24Hr")
-    val changePercent24Hr: String?,
+    @ColumnInfo(name = "cambio") val changePercent24Hr: String?,
     @SerializedName("explorer")
-    val explorer: String?,
+    @ColumnInfo(name = "web") val explorer: String?,
     @SerializedName("id")
-    val id: String?,
+    @ColumnInfo(name = "id") val id: String?,
     @SerializedName("marketCapUsd")
-    val marketCapUsd: String?,
+    @ColumnInfo(name = "capital_mercado") val marketCapUsd: String?,
     @SerializedName("maxSupply")
-    val maxSupply: String?,
+    @ColumnInfo(name = "suministro_maximo") val maxSupply: String?,
     @SerializedName("name")
-    val name: String?,
+    @ColumnInfo(name = "nombre") val name: String?,
     @SerializedName("priceUsd")
-    val priceUsd: String?,
+    @ColumnInfo(name = "valor") val priceUsd: String?,
     @SerializedName("rank")
-    val rank: String?,
+    @ColumnInfo(name = "ranking") val rank: String?,
     @SerializedName("supply")
-    val supply: String?,
+    @ColumnInfo(name = "suministro") val supply: String?,
     @SerializedName("symbol")
-    val symbol: String?,
+    @ColumnInfo(name = "simbolo") val symbol: String?,
     @SerializedName("volumeUsd24Hr")
-    val volumeUsd24Hr: String?,
+    @ColumnInfo(name = "volumen") val volumeUsd24Hr: String?,
     @SerializedName("vwap24Hr")
-    val vwap24Hr: String?
-)
+    @ColumnInfo(name = "vwap") val vwap24Hr: String?,
+    @ColumnInfo(name = "imagen")
+    val imagen: String?
+){
+    @PrimaryKey(autoGenerate = true)
+    var id2: Int  = 0
+}
