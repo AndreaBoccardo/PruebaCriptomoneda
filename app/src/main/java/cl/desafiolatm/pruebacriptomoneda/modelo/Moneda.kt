@@ -32,8 +32,7 @@ data class Moneda(
     @ColumnInfo(name = "volumen") val volumeUsd24Hr: String?,
     @SerializedName("vwap24Hr")
     @ColumnInfo(name = "vwap") val vwap24Hr: String?,
-    @ColumnInfo(name = "imagen")
-    val imagen: String?
+
 ){
     @PrimaryKey(autoGenerate = true)
     var id2: Int  = 0

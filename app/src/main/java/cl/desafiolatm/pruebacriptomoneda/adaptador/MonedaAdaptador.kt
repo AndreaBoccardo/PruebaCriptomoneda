@@ -23,7 +23,8 @@ class MonedaAdaptador: RecyclerView.Adapter<MonedaAdaptador.CustomViewHolder>() 
 
                 tvSimboloLista.text = moneda.symbol
                 tvValorLista.text = moneda.priceUsd
-                Picasso.get().load(moneda.imagen).into(ivImagenLista)
+                Picasso.get().load("https://static.coincap.io/assets/icons/${moneda.symbol?.lowercase()}@2x.png"
+                ).into(ivImagenLista)
                 itemView.setOnClickListener {
                     listener.miOnClick(moneda)
                 }
