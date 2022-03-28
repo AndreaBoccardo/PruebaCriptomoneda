@@ -18,16 +18,15 @@ class MonedaViewModel(application: Application): AndroidViewModel(application) {
 
     private val repo = RespuestaRepositorio()
     private val repoDao = MonedaRepositorio(application)
-    var listaApi: MutableLiveData<List<Moneda>> = MutableLiveData()
     var listaRoom: LiveData<List<Moneda>> = repoDao.listar()
     var moneda = MutableLiveData<Moneda>()
+    val filtro = MutableLiveData<String>()
 
 
     fun obtenerMoneda(){
         repo.getCall().enqueue(object : Callback<Respuesta>{
             override fun onResponse(call: Call<Respuesta>, response: Response<Respuesta>) {
                 response.body().let {
-                   // listaApi.postValue(response.body()?.data)
                     repoDao.agregar(response.body()!!.data)
                 }
             }

@@ -30,11 +30,15 @@ class MainActivity : AppCompatActivity() {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                viewModel.obtenerMoneda()
+                viewModel.filtro.value = query
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                if(newText!!.isEmpty())
+                {
+                    viewModel.filtro.value = ""
+                }
                 return false
             }
 

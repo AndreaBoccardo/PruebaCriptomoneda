@@ -60,4 +60,9 @@ class MonedaAdaptador: RecyclerView.Adapter<MonedaAdaptador.CustomViewHolder>() 
         this.listener = listener
     }
 
+    fun filtrarLista(lista:List<Moneda>){
+        this.lista = lista
+        notifyDataSetChanged()
+    }
+
 }

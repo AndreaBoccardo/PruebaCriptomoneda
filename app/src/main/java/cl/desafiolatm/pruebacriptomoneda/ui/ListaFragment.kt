@@ -51,12 +51,14 @@ class ListaFragment : Fragment() {
             rvLista.layoutManager = manager
         }
 
-        viewModel.listaApi.observe(viewLifecycleOwner, Observer {
+        viewModel.listaRoom.observe(viewLifecycleOwner, Observer {
             adapter.updateLista(it)
         })
 
-        viewModel.listaRoom.observe(viewLifecycleOwner, Observer {
-            adapter.updateLista(it)
+        viewModel.filtro.observe(viewLifecycleOwner, Observer {
+            adapter.filtrarLista(viewModel.listaRoom.value!!.filter {
+                m -> m.name!!.contains(it.uppercase()) || m.symbol!!.contains(it.uppercase())
+            })
         })
 
 
