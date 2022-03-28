@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cl.desafiolatm.pruebacriptomoneda.R
+import cl.desafiolatm.pruebacriptomoneda.R.*
 import cl.desafiolatm.pruebacriptomoneda.databinding.ItemLayoutBinding
 import cl.desafiolatm.pruebacriptomoneda.modelo.Moneda
 import com.squareup.picasso.Picasso
@@ -18,9 +19,9 @@ class MonedaAdaptador: RecyclerView.Adapter<MonedaAdaptador.CustomViewHolder>() 
 
         private val binding = ItemLayoutBinding.bind(itemView)
 
+
         fun bindData(moneda: Moneda){
             with(binding){
-
                 tvSimboloLista.text = moneda.symbol
                 tvValorLista.text = moneda.priceUsd
                 Picasso.get().load("https://static.coincap.io/assets/icons/${moneda.symbol?.lowercase()}@2x.png"
@@ -33,7 +34,7 @@ class MonedaAdaptador: RecyclerView.Adapter<MonedaAdaptador.CustomViewHolder>() 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(layout.item_layout,parent,false)
         return CustomViewHolder(view, listener)
     }
 

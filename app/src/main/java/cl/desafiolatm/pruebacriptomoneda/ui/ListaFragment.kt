@@ -3,10 +3,8 @@ package cl.desafiolatm.pruebacriptomoneda.ui
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
@@ -31,6 +29,8 @@ class ListaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentListaBinding.inflate(inflater)
+
+        setHasOptionsMenu(true)
 
         archivo = requireActivity().getSharedPreferences(ARCHIVO_NAME, Context.MODE_PRIVATE)
 
@@ -62,5 +62,9 @@ class ListaFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
     }
 }

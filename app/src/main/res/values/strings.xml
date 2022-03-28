@@ -17,4 +17,5 @@
     <string name="vwap">VWAP</string>
     <string name="vwap_24h">VWAP(24H)$</string>
     <string name="msg_error">Debe ingresar un nombre</string>
+    <string name="buscar">Buscar</string>
 </resources>
